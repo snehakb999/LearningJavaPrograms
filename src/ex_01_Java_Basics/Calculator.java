@@ -12,7 +12,7 @@ public class Calculator {
         else{
             System.out.println("enter only integer value");
             System.exit(0);
-            return -1;
+            return -1;//dummy return to easy for compiler , because this function is not void
         }
     }
     static int addition(int a, int b){

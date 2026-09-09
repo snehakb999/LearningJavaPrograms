@@ -8,9 +8,16 @@ public class ReverseTheNumber {
         System.out.print("Enter a number to reverse: ");
         int num = scanner.nextInt();
         int reversed=0;
+        //here, in for loop initialization part is not there,
+        // condition is there so it will check(num!=0) ,
+        // after this body part is executed(int digit = num % 10;
+        //                                  reversed = reversed * 10 + digit;)
+        //then only updation part(num/=10) is executed
         for (; num != 0; num /= 10) {
+
             int digit = num % 10;
             reversed = reversed * 10 + digit;
+
         }
         System.out.println("Reversed Number: " + reversed);
 
