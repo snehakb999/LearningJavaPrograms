@@ -1,4 +1,4 @@
-package tyrebelly;
+package java_practice;
 
 public class ForLoop {
     public static void main(String[] args) {

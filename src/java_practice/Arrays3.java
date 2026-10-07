@@ -1,6 +1,4 @@
-package tyrebelly;
-
-import java.util.Arrays;
+package java_practice;
 
 public class Arrays3 {
     public static void main(String[] args) {

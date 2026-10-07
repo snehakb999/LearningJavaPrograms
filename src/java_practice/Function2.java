@@ -1,9 +1,6 @@
-package tyrebelly;
+package java_practice;
 
-import java.awt.*;
 import java.util.Scanner;
-
-import static java.awt.Color.green;
 
 public class Function2 {
     //1.without parameters/argument and without return type

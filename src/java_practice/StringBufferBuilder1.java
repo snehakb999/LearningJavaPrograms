@@ -1,4 +1,4 @@
-package tyrebelly;
+package java_practice;
 
 public class StringBufferBuilder1 {
     public static void main(String[] args) {

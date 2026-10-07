@@ -1,4 +1,4 @@
-package tyrebelly;
+package java_practice;
 
 public class Sample2 {
     public static void main(String[] args) {
