@@ -1,0 +1,392 @@
+JAVA OOP CONCEPTS - QUICK NOTES
+================================
+
+Object-Oriented Programming (OOP) is a programming approach based on
+objects and classes.
+
+The four main principles of OOP are:
+
+1. ENCAPSULATION
+2. INHERITANCE
+3. POLYMORPHISM
+4. ABSTRACTION
+
+
+1. CLASS
+--------
+A class is a blueprint or template used to create objects.
+
+Example:
+
+class Car {
+    String brand;
+    int speed;
+
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+
+
+2. OBJECT
+---------
+An object is an instance of a class.
+
+Example:
+
+Car car1 = new Car();
+
+Here:
+- Car is the class.
+- car1 is the object.
+- new Car() creates an object in memory.
+
+
+3. ENCAPSULATION
+----------------
+Encapsulation means wrapping data and methods together inside a class
+and controlling access to the data.
+
+This is commonly achieved using:
+- private variables
+- public getter and setter methods
+
+Example:
+
+class Employee {
+    private String name;
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+}
+
+Advantages:
+- Protects data
+- Provides controlled access
+- Improves maintainability
+
+
+4. INHERITANCE
+--------------
+Inheritance allows one class to acquire properties and methods of
+another class.
+
+Example:
+
+class Animal {
+    void eat() {
+        System.out.println("Eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking");
+    }
+}
+
+Dog inherits the eat() method from Animal.
+
+Advantages:
+- Code reusability
+- Reduces duplicate code
+- Supports hierarchical relationships
+
+
+5. POLYMORPHISM
+---------------
+Polymorphism means "many forms".
+
+There are two common types in Java:
+
+A. Compile-time polymorphism
+B. Runtime polymorphism
+
+
+A. METHOD OVERLOADING
+---------------------
+Method overloading means having multiple methods with the same name
+but different parameter lists.
+
+Example:
+
+class Calculator {
+
+    int add(int a, int b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+The compiler determines which method to call based on the arguments.
+
+This is compile-time polymorphism.
+
+
+B. METHOD OVERRIDING
+--------------------
+Method overriding occurs when a child class provides its own
+implementation of a method inherited from the parent class.
+
+Example:
+
+class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+This is runtime polymorphism.
+
+
+6. ABSTRACTION
+--------------
+Abstraction means hiding implementation details and showing only
+the necessary functionality.
+
+Abstraction can be achieved using:
+- abstract classes
+- interfaces
+
+Example using an abstract class:
+
+abstract class Vehicle {
+
+    abstract void start();
+
+    void stop() {
+        System.out.println("Vehicle stopped");
+    }
+}
+
+class Car extends Vehicle {
+
+    @Override
+    void start() {
+        System.out.println("Car started");
+    }
+}
+
+
+7. INTERFACE
+------------
+An interface defines a contract that implementing classes must follow.
+
+Example:
+
+interface Payment {
+    void pay();
+}
+
+class CreditCardPayment implements Payment {
+
+    @Override
+    public void pay() {
+        System.out.println("Payment completed");
+    }
+}
+
+Interfaces are commonly used to achieve abstraction and support
+multiple inheritance of type in Java.
+
+
+8. CONSTRUCTOR
+--------------
+A constructor is a special method used to initialize an object.
+
+Characteristics:
+- Same name as the class
+- Does not have a return type
+- Called automatically when an object is created
+
+Example:
+
+class Student {
+
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+}
+
+Creating the object:
+
+Student student = new Student("John");
+
+
+9. THIS KEYWORD
+---------------
+The 'this' keyword refers to the current object.
+
+Example:
+
+class Student {
+
+    String name;
+
+    Student(String name) {
+        this.name = name;
+    }
+}
+
+Here:
+- this.name refers to the instance variable.
+- name refers to the constructor parameter.
+
+
+10. SUPER KEYWORD
+-----------------
+The 'super' keyword refers to the immediate parent class.
+
+It can be used to:
+- Access parent class variables
+- Call parent class methods
+- Call the parent class constructor
+
+Example:
+
+class Animal {
+    String name = "Animal";
+}
+
+class Dog extends Animal {
+
+    String name = "Dog";
+
+    void display() {
+        System.out.println(super.name);
+    }
+}
+
+
+11. ACCESS MODIFIERS
+--------------------
+
+public:
+Accessible from anywhere.
+
+private:
+Accessible only within the same class.
+
+protected:
+Accessible within the same package and through inheritance.
+
+default:
+Accessible within the same package when no access modifier is
+specified.
+
+
+12. OOP IN TEST AUTOMATION
+--------------------------
+
+OOP concepts are widely used in Selenium automation frameworks.
+
+Examples:
+
+Encapsulation:
+Page classes can keep WebElements private and expose public methods
+for performing actions.
+
+Inheritance:
+A BaseTest class can contain common WebDriver setup and teardown,
+which test classes can inherit.
+
+Polymorphism:
+WebDriver is an interface and ChromeDriver, FirefoxDriver, etc.
+provide different implementations.
+
+Abstraction:
+Selenium WebDriver provides high-level methods such as:
+driver.get()
+driver.findElement()
+driver.click()
+
+The tester uses these methods without needing to know their internal
+implementation.
+
+
+13. INTERVIEW QUESTIONS
+-----------------------
+
+Q1. What is OOP?
+
+A: OOP is a programming paradigm based on classes and objects.
+
+
+Q2. What are the four pillars of OOP?
+
+A: Encapsulation, Inheritance, Polymorphism, and Abstraction.
+
+
+Q3. What is encapsulation?
+
+A: Encapsulation is the process of bundling data and methods together
+and restricting direct access to internal data.
+
+
+Q4. What is inheritance?
+
+A: Inheritance allows a child class to acquire properties and methods
+from a parent class.
+
+
+Q5. What is polymorphism?
+
+A: Polymorphism allows the same interface or method name to represent
+different implementations or behaviors.
+
+
+Q6. What is the difference between overloading and overriding?
+
+A:
+Overloading:
+- Same method name
+- Different parameters
+- Compile-time polymorphism
+
+Overriding:
+- Same method signature
+- Child class provides a new implementation
+- Runtime polymorphism
+
+
+Q7. What is abstraction?
+
+A: Abstraction hides implementation details and exposes only the
+required functionality.
+
+
+Q8. What is the difference between a class and an object?
+
+A:
+Class -> Blueprint or template.
+Object -> Instance of a class.
+
+
+Q9. Why is encapsulation useful in automation frameworks?
+
+A: It helps hide internal implementation details and provides
+controlled methods for interacting with page elements and data.
+
+
+Q10. How is inheritance used in Selenium frameworks?
+
+A: A common BaseTest class can contain WebDriver initialization,
+configuration, and cleanup methods that can be reused by test classes
+through inheritance.
