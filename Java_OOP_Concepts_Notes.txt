@@ -11,6 +11,7 @@ The four main principles of OOP are:
 3. POLYMORPHISM
 4. ABSTRACTION
 
+Java Practice: Review classes, objects, inheritance, polymorphism, and abstraction.
 
 1. CLASS
 --------
