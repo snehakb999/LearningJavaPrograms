@@ -317,11 +317,143 @@ driver.get()
 driver.findElement()
 driver.click()
 
+12. FINAL KEYWORD
+-----------------
+The 'final' keyword is used to restrict modification.
+
+final variable:
+A final variable cannot be reassigned.
+
+final method:
+A final method cannot be overridden.
+
+final class:
+A final class cannot be inherited.
+
+Example:
+
+final int MAX_VALUE = 100;
+
+
+13. STATIC KEYWORD
+------------------
+The 'static' keyword belongs to the class rather than to individual
+objects.
+
+A static variable or method can be accessed using the class name.
+
+Example:
+
+class Employee {
+
+    static String company = "ABC";
+}
+
+Accessing the variable:
+
+System.out.println(Employee.company);
+
+
+14. ABSTRACT CLASS VS INTERFACE
+-------------------------------
+
+Abstract Class:
+- Can contain abstract and concrete methods
+- Can have constructors
+- Can have instance variables
+- A class can extend only one abstract class
+
+Interface:
+- Defines a contract
+- Supports abstraction
+- A class can implement multiple interfaces
+- Methods are commonly implemented by the implementing class
+
+
+15. OOP IN TEST AUTOMATION
+--------------------------
+
+OOP concepts are widely used in Selenium automation frameworks.
+
+Encapsulation:
+Page classes can keep WebElements private and expose public methods
+for performing actions.
+
+Example:
+
+private WebElement loginButton;
+
+public void clickLoginButton() {
+    loginButton.click();
+}
+
+
+Inheritance:
+A BaseTest class can contain common WebDriver setup and teardown.
+Test classes can inherit these common methods.
+
+Example:
+
+class LoginTest extends BaseTest {
+}
+
+
+Polymorphism:
+WebDriver is an interface.
+
+Example:
+
+WebDriver driver = new ChromeDriver();
+
+Here:
+- WebDriver is the interface/reference type.
+- ChromeDriver is the implementation.
+- The same WebDriver reference can work with different browser
+  implementations.
+
+
+Abstraction:
+Selenium provides high-level methods such as:
+
+driver.get();
+driver.findElement();
+driver.quit();
+
 The tester uses these methods without needing to know their internal
 implementation.
 
 
-13. INTERVIEW QUESTIONS
+16. OOP IN PAGE OBJECT MODEL
+----------------------------
+
+The Page Object Model (POM) uses OOP concepts to organize Selenium
+automation code.
+
+Each web page can be represented by a separate class.
+
+Example:
+
+class LoginPage {
+
+    private WebElement username;
+    private WebElement password;
+
+    public void enterUsername(String username) {
+        this.username.sendKeys(username);
+    }
+
+    public void enterPassword(String password) {
+        this.password.sendKeys(password);
+    }
+}
+
+This improves:
+- Code reusability
+- Maintainability
+- Readability
+- Separation of test logic and page logic
+
+ INTERVIEW QUESTIONS
 -----------------------
 
 Q1. What is OOP?
@@ -348,16 +480,17 @@ from a parent class.
 
 Q5. What is polymorphism?
 
-A: Polymorphism allows the same interface or method name to represent
-different implementations or behaviors.
+A: Polymorphism allows the same method name or interface to represent
+different behaviors.
 
 
 Q6. What is the difference between overloading and overriding?
 
 A:
+
 Overloading:
 - Same method name
-- Different parameters
+- Different parameter list
 - Compile-time polymorphism
 
 Overriding:
@@ -375,6 +508,7 @@ required functionality.
 Q8. What is the difference between a class and an object?
 
 A:
+
 Class -> Blueprint or template.
 Object -> Instance of a class.
 
@@ -390,3 +524,40 @@ Q10. How is inheritance used in Selenium frameworks?
 A: A common BaseTest class can contain WebDriver initialization,
 configuration, and cleanup methods that can be reused by test classes
 through inheritance.
+
+
+Q11. What is the difference between an abstract class and an interface?
+
+A: An abstract class can contain both abstract and concrete methods
+and can have constructors and instance variables. An interface is
+mainly used to define a contract and supports implementation by
+multiple classes.
+
+
+Q12. Why is WebDriver an example of polymorphism?
+
+A: WebDriver is an interface, while ChromeDriver, FirefoxDriver and
+other browser drivers provide implementations of that interface.
+
+Example:
+
+WebDriver driver = new ChromeDriver();
+
+
+Q13. What is the purpose of the final keyword?
+
+A: The final keyword is used to prevent modification, method
+overriding, or class inheritance depending on where it is used.
+
+
+Q14. What is the purpose of the this keyword?
+
+A: The this keyword refers to the current object and is commonly used
+to distinguish instance variables from local variables or parameters.
+
+
+Q15. What is the purpose of the super keyword?
+
+A: The super keyword is used to access members of the immediate parent
+class and to call the parent class constructor.
+
