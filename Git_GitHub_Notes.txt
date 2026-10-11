@@ -1,0 +1,329 @@
+GIT AND GITHUB - QUICK NOTES
+=============================
+
+1. WHAT IS GIT?
+----------------
+Git is a Distributed Version Control System (DVCS).
+
+It is used to:
+- Track changes in source code
+- Maintain different versions of a project
+- Revert to previous versions when needed
+- Allow multiple developers to work on the same project
+- Work locally without always depending on an internet connection
+
+2. WHAT IS GITHUB?
+------------------
+GitHub is a cloud-based platform used to host Git repositories online.
+
+Git     -> Version Control System
+GitHub  -> Online platform for hosting Git repositories
+
+3. GIT REPOSITORY
+-----------------
+A repository (repo) is a project tracked by Git.
+
+There are two main repositories:
+
+Local Repository:
+- Stored on your computer
+- Contains your project and Git history
+
+Remote Repository:
+- Stored on a remote platform such as GitHub
+- Used for collaboration and backup
+
+4. BASIC GIT WORKFLOW
+---------------------
+
+Working Directory
+       |
+       | git add
+       v
+Staging Area
+       |
+       | git commit
+       v
+Local Repository
+       |
+       | git push
+       v
+Remote Repository (GitHub)
+
+
+5. WORKING DIRECTORY
+--------------------
+The working directory is the actual project folder where you create
+and modify files.
+
+Example:
+
+SeleniumAutomation/
+    src/
+    pom.xml
+    testng.xml
+    README.md
+
+When you create or modify a file, the change is initially present
+in the working directory.
+
+6. STAGING AREA
+---------------
+The staging area is a preparation area.
+
+The command:
+
+git add .
+
+means:
+
+"Prepare all current changes to be included in the next commit."
+
+You can also add a specific file:
+
+git add LoginTest.java
+
+7. LOCAL REPOSITORY
+-------------------
+The local repository stores committed changes and Git history on
+your computer.
+
+Command:
+
+git commit -m "Added login test"
+
+A commit is a saved snapshot/version of the project.
+
+Example commit messages:
+
+git commit -m "Added login test"
+git commit -m "Added checkout test"
+git commit -m "Fixed login locator"
+git commit -m "Added screenshot functionality"
+
+8. REMOTE REPOSITORY
+--------------------
+A remote repository is the repository hosted online, for example
+on GitHub.
+
+The remote repository allows developers to:
+- Store code online
+- Collaborate
+- Share projects
+- Backup their code
+- Review changes
+
+9. IMPORTANT GIT COMMANDS
+-------------------------
+
+git status
+-----------
+Shows the current state of the working directory and staging area.
+
+git add .
+-----------
+Stages all modified/new files.
+
+git add filename
+----------------
+Stages a specific file.
+
+git commit -m "message"
+-----------------------
+Saves staged changes to the local repository.
+
+git push
+---------
+Uploads local commits to the remote repository (GitHub).
+
+git pull
+---------
+Downloads the latest changes from the remote repository and updates
+the local repository/working files.
+
+git clone <repository-url>
+--------------------------
+Creates a local copy of a remote GitHub repository.
+
+git log
+--------
+Shows the commit history.
+
+git branch
+----------
+Shows available branches.
+
+git switch branch-name
+----------------------
+Switches to another branch.
+
+10. GIT ADD vs GIT COMMIT vs GIT PUSH
+--------------------------------------
+
+git add
+--------
+Prepare changes.
+
+git commit
+-----------
+Save changes in the local repository.
+
+git push
+---------
+Upload committed changes to GitHub.
+
+Easy way to remember:
+
+ADD     = Prepare
+COMMIT  = Save locally
+PUSH    = Upload to GitHub
+
+11. GIT PULL vs GIT PUSH
+------------------------
+
+git push:
+Local Repository -> Remote Repository
+
+git pull:
+Remote Repository -> Local Repository
+
+12. EXAMPLE WITH A SELENIUM PROJECT
+------------------------------------
+
+Suppose you create a new test:
+
+CheckoutTest.java
+
+Step 1:
+Create or modify the file in the working directory.
+
+Step 2:
+Run:
+
+git status
+
+Step 3:
+Stage the file:
+
+git add CheckoutTest.java
+
+Step 4:
+Commit the change:
+
+git commit -m "Added checkout test"
+
+Step 5:
+Upload it to GitHub:
+
+git push
+
+Final flow:
+
+CheckoutTest.java
+      |
+      v
+Working Directory
+      |
+   git add
+      |
+      v
+Staging Area
+      |
+ git commit
+      |
+      v
+Local Repository
+      |
+   git push
+      |
+      v
+GitHub
+
+13. DISTRIBUTED VERSION CONTROL SYSTEM
+--------------------------------------
+
+Git is called a Distributed Version Control System because every
+developer has a complete local copy of the repository and its
+history.
+
+This means developers can:
+- Work independently
+- Commit changes locally
+- View project history locally
+- Work even without an internet connection
+
+Internet is mainly required when exchanging changes with the
+remote repository, such as using git push or git pull.
+
+14. INTERVIEW ANSWERS
+---------------------
+
+Q: What is Git?
+
+A: Git is a distributed version control system used to track changes
+in source code, maintain different versions of a project, and
+support collaboration among developers.
+
+Q: What is GitHub?
+
+A: GitHub is a cloud-based platform used to host Git repositories
+and collaborate with other developers.
+
+Q: Why is Git called distributed?
+
+A: Git is called distributed because every developer has a complete
+local copy of the repository, including its history.
+
+Q: What is a commit?
+
+A: A commit is a saved snapshot of changes in the local Git
+repository.
+
+Q: What is the staging area?
+
+A: The staging area is an intermediate area where we prepare changes
+before committing them.
+
+Q: Difference between git add and git commit?
+
+A: git add moves changes to the staging area, while git commit saves
+the staged changes to the local repository.
+
+Q: Difference between git commit and git push?
+
+A: git commit saves changes locally, while git push uploads those
+commits to the remote repository.
+
+Q: Difference between git pull and git push?
+
+A: git push sends local commits to the remote repository, while
+git pull gets the latest changes from the remote repository.
+
+15. BASIC COMMAND FLOW TO REMEMBER
+----------------------------------
+
+git status
+git add .
+git commit -m "Meaningful commit message"
+git push
+
+For getting the latest changes:
+
+git pull
+
+16. IMPORTANT CONCEPT
+---------------------
+
+Git has three important local areas:
+
+Working Directory
+    -> Where you modify files
+
+Staging Area
+    -> Where you prepare changes
+
+Local Repository
+    -> Where committed versions are stored
+
+GitHub is the remote repository where the project can be hosted
+and shared online.
