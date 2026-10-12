@@ -1,6 +1,8 @@
 GIT AND GITHUB - QUICK NOTES
 =============================
 
+
+
 1. WHAT IS GIT?
 ----------------
 Git is a Distributed Version Control System (DVCS).
@@ -327,3 +329,5 @@ Local Repository
 
 GitHub is the remote repository where the project can be hosted
 and shared online.
+A branch allows developers to work on a separate line of development
+without directly affecting the main project branch.
